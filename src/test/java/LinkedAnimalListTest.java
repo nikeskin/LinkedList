@@ -138,7 +138,7 @@ public class LinkedAnimalListTest {
     }
 
     @Test
-    public void runLinkedListRemoveAt0() {
+    public void runLinkedListRemoveAt2() {
         //GIVEN
         Animal chicken = new Animal("Chicken");
         Animal lion = new Animal("Lion");
@@ -154,10 +154,10 @@ public class LinkedAnimalListTest {
         LinkedAnimalList actual = new LinkedAnimalList(chickenItem);
         actual.add(lionItem);
         actual.add(mouseItem);
-        actual.remove(chicken);
+        actual.remove(mouse);
 
         //THEN
-        Assertions.assertEquals(expected, actual.getAnimalAtIndex(0).getName());
+        Assertions.assertEquals(expected, actual.getAnimalAtIndex(1).getName());
     }
 
 }
