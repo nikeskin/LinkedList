@@ -8,6 +8,16 @@ public class LinkedAnimalList {
         this.head = item;
     }
 
+    public int getLength(){
+        int counter = 1;
+        AnimalListItem temp = head;
+        while (temp.getNext() != null) {
+            temp = temp.getNext();
+            counter++;
+        }
+        return counter;
+    }
+
     public void add(AnimalListItem item) {
         AnimalListItem temp = head;
         while (temp.getNext() != null) {
