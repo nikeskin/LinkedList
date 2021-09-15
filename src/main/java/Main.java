@@ -21,15 +21,23 @@ public class Main {
         linkedAnimalList.add(lionItem);
         System.out.println(linkedAnimalList);
 
-        linkedAnimalList.add(mouseItem);
+        linkedAnimalList.addAtIndex(mouseItem, 1);
         System.out.println(linkedAnimalList);
+
+        System.out.println(linkedAnimalList.printLinkedAnimalNames());
 
         linkedAnimalList.add(chickenItem2);
         System.out.println(linkedAnimalList);
         System.out.println(linkedAnimalList.getLength());
 
         linkedAnimalList.remove(chicken);
+        linkedAnimalList.remove(mouse);
+        linkedAnimalList.remove(null);
+        linkedAnimalList.remove(lion);
         System.out.println(linkedAnimalList);
         System.out.println(linkedAnimalList.getLength());
+
+        System.out.println(linkedAnimalList.printLinkedAnimalNames());
+
     }
 }

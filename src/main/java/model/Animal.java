@@ -2,24 +2,24 @@ package model;
 
 public class Animal {
 
-    private String value;
+    private String name;
 
-    public Animal (String value) {
-        this.value = value;
+    public Animal (String name) {
+        this.name = name;
     }
 
-    public String getValue() {
-        return value;
+    public String getName() {
+        return name;
     }
 
-    public void setValue(String value) {
-        this.value = value;
+    public void setName(String name) {
+        this.name = name;
     }
 
     @Override
     public String toString() {
         return "Animal{" +
-                "animalName='" + value + '\'' +
+                "animalName='" + name + '\'' +
                 '}';
     }
 }

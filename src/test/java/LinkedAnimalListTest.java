@@ -68,4 +68,96 @@ public class LinkedAnimalListTest {
         Assertions.assertEquals(expected, actual);
     }
 
+    @Test
+    public void runLinkedListForAnimalPrint() {
+        //GIVEN
+        Animal chicken = new Animal("Chicken");
+        Animal lion = new Animal("Lion");
+        Animal mouse = new Animal("Mouse");
+
+        AnimalListItem chickenItem = new AnimalListItem(chicken);
+        AnimalListItem lionItem = new AnimalListItem(lion);
+        AnimalListItem mouseItem = new AnimalListItem(mouse);
+
+        String expected = "Head: Chicken --> Lion --> Mouse |";
+
+        //WHEN
+        LinkedAnimalList linkedList = new LinkedAnimalList(chickenItem);
+        linkedList.add(lionItem);
+        linkedList.add(mouseItem);
+        String actual = linkedList.printLinkedAnimalNames();
+
+        //THEN
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void runLinkedListTestForNthElement() {
+        //GIVEN
+        Animal chicken = new Animal("Chicken");
+        Animal lion = new Animal("Lion");
+        Animal mouse = new Animal("Mouse");
+
+        AnimalListItem chickenItem = new AnimalListItem(chicken);
+        AnimalListItem lionItem = new AnimalListItem(lion);
+        AnimalListItem mouseItem = new AnimalListItem(mouse);
+
+        int inputIndex = 1;
+        String expected = "Lion";
+
+        //WHEN
+        LinkedAnimalList linkedList = new LinkedAnimalList(chickenItem);
+        linkedList.add(lionItem);
+        linkedList.add(mouseItem);
+        String actual = linkedList.getAnimalAtIndex(inputIndex).getName();
+
+        //THEN
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void runLinkedListInsertAtIndex() {
+        //GIVEN
+        Animal chicken = new Animal("Chicken");
+        Animal lion = new Animal("Lion");
+        Animal mouse = new Animal("Mouse");
+
+        AnimalListItem chickenItem = new AnimalListItem(chicken);
+        AnimalListItem lionItem = new AnimalListItem(lion);
+        AnimalListItem mouseItem = new AnimalListItem(mouse);
+
+        String expected = "Mouse";
+
+        //WHEN
+        LinkedAnimalList actual = new LinkedAnimalList(chickenItem);
+        actual.add(lionItem);
+        actual.addAtIndex(mouseItem, 1);
+
+        //THEN
+        Assertions.assertEquals(expected, actual.getAnimalAtIndex(1).getName());
+    }
+
+    @Test
+    public void runLinkedListRemoveAt0() {
+        //GIVEN
+        Animal chicken = new Animal("Chicken");
+        Animal lion = new Animal("Lion");
+        Animal mouse = new Animal("Mouse");
+
+        AnimalListItem chickenItem = new AnimalListItem(chicken);
+        AnimalListItem lionItem = new AnimalListItem(lion);
+        AnimalListItem mouseItem = new AnimalListItem(mouse);
+
+        String expected = "Lion";
+
+        //WHEN
+        LinkedAnimalList actual = new LinkedAnimalList(chickenItem);
+        actual.add(lionItem);
+        actual.add(mouseItem);
+        actual.remove(chicken);
+
+        //THEN
+        Assertions.assertEquals(expected, actual.getAnimalAtIndex(0).getName());
+    }
+
 }
